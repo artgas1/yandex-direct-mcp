@@ -327,9 +327,11 @@ missing capability. The right to decide stays with the API.
 
 
 ```bash
-npm test        # 58 tests, negative controls included
-npm run surface # measure the surface per profile
-npm run smoke   # run the built server against the live API (token required)
+npm test         # 67 tests, negative controls included
+npm run surface  # measure the surface per profile
+npm run coverage # the coverage table for the README
+npm run graphic  # rebuild the surface graphic (SVG and GIF)
+npm run smoke    # run the built server against the live API (token required)
 ```
 
 The tests carry a negative control for every invariant — that is, they are able to

@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
 import { test } from 'node:test';
 
 import { markdown, rows } from '../tools/coverage.mjs';
@@ -77,6 +77,28 @@ test('строка mcp-name на месте — по ней сервер нах�
     assert.ok(
       text.includes('mcp-name: io.github.artgas1/yandex-direct-api-mcp'),
       `${name}: нет строки mcp-name`,
+    );
+  }
+});
+
+test('число тестов в README совпадает с числом тестов', () => {
+  // Ровно этот дефект нашёлся при добавлении проверок: README говорил «58»,
+  // тестов было 66. Считаем так же, как их считает node --test: по объявлениям
+  // верхнего уровня.
+  const dir = new URL('./', import.meta.url);
+  const actual = readdirSync(dir)
+    .filter((f) => f.endsWith('.test.mjs'))
+    .reduce(
+      (n, f) => n + (readFileSync(new URL(f, dir), 'utf8').match(/^test\(/gm) ?? []).length,
+      0,
+    );
+  for (const [name, text] of BOTH) {
+    const claimed = /npm test\s+# (\d+) (?:тестов|tests)/.exec(text)?.[1];
+    assert.ok(claimed, `${name}: не нашёл, сколько тестов заявлено`);
+    assert.equal(
+      Number(claimed),
+      actual,
+      `${name} заявляет ${claimed} тестов, а их ${actual}`,
     );
   }
 });
