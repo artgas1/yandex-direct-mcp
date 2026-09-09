@@ -298,7 +298,7 @@ npm run spec:build    # собрать spec/direct-api.json
 
 
 ```bash
-npm test         # 67 тестов, включая отрицательные контроли
+npm test         # 70 тестов, включая отрицательные контроли
 npm run surface  # замер поверхности по профилям
 npm run coverage # таблица покрытия для README
 npm run graphic  # пересобрать графику поверхности (SVG и GIF)

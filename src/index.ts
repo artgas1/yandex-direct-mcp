@@ -110,16 +110,42 @@ const server = new McpServer(
   },
 );
 
-const count = registerAll(server, spec, token, { allowWrites, maxOutputChars, include, clientLogin });
+/**
+ * Объявленное считается на самих регистрациях, а не отдельной переменной.
+ *
+ * Отдельная переменная уже разошлась: баннер сообщал «инструментов 10 из 113»
+ * при тринадцати в tools/list, потому что direct_fields, direct_schema и
+ * direct_catalog в неё не попадали. Число выглядело правдоподобным, и увидеть
+ * подмену можно было только сравнив баннер с ответом сервера.
+ */
+let declared = 0;
+// Обёртка — Proxy, а не своя функция с ...args: registerTool перегружен, и
+// Parameters<> по нему вырождается в never. Proxy сохраняет сигнатуру, поэтому
+// приведение остаётся одно и снаружи.
+const registrar: Pick<McpServer, 'registerTool'> = {
+  registerTool: new Proxy(server.registerTool, {
+    apply(target, _thisArg, args: unknown[]) {
+      declared++;
+      return Reflect.apply(target as (...a: unknown[]) => unknown, server, args);
+    },
+  }) as McpServer['registerTool'],
+};
 
-registerCatalog(server, spec, {
+const apiTools = registerAll(registrar, spec, token, {
+  allowWrites,
+  maxOutputChars,
+  include,
+  clientLogin,
+});
+
+registerCatalog(registrar, spec, {
   label: surface.label,
   include,
   allowWrites,
   widenHint: surface.widenHint,
 });
 
-if (count === 0) {
+if (apiTools === 0) {
   console.error(`${surface.label} не выбрал ни одного инструмента.`);
   process.exit(1);
 }
@@ -131,7 +157,8 @@ const shown = spec.methods.filter((m) => include(m));
 const writes = shown.filter(isWrite).length;
 
 console.error(
-  `yandex-direct-mcp ${pkg.version}: ${surface.label}, инструментов ${count} из ${spec.methods.length}; ` +
+  `yandex-direct-mcp ${pkg.version}: ${surface.label}, инструментов ${declared} — ` +
+    `методов API ${shown.length} из ${spec.methods.length} и служебных ${declared - shown.length}; ` +
     `путь ${apiVersion()}${useSandbox() ? ' (ПЕСОЧНИЦА)' : ''}; ` +
     `меняющих данные ${writes} — ${allowWrites ? 'РАЗРЕШЕНЫ (DIRECT_ALLOW_WRITES)' : 'не объявлены'}.` +
     (surface.widenHint ? ` ${surface.widenHint}` : ''),
