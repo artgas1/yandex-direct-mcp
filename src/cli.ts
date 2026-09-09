@@ -253,7 +253,19 @@ export async function runCli(argv: readonly string[], io: CliIo = defaultIo): Pr
   try {
     if (method.tool === 'direct_reports_get') {
       const { tsv, polls, units } = await runReport({
-        params: { ...params, Format: 'TSV', ReportName: `cli_${Date.now().toString(36)}` },
+        params: {
+          // Обязательные поля, про которые API молчит до самого вызова.
+          // IncludeVAT в докладной части не помечен обязательным, а запрос без
+          // него отбивается кодом 8000 «В params отсутствует обязательное поле
+          // IncludeVAT». MCP-инструмент подставлял его, а этот режим — нет, и
+          // расхождение нашлось только настоящей задачей: справка и describe
+          // о нём не сообщали.
+          IncludeVAT: 'YES',
+          DateRangeType: 'CUSTOM_DATE',
+          ...params,
+          Format: 'TSV',
+          ReportName: `cli_${Date.now().toString(36)}`,
+        },
         token,
         clientLogin,
       });
