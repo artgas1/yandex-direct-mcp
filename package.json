@@ -17,7 +17,8 @@
     "smoke": "tsc && node tools/smoke.mjs",
     "skill:build": "node tools/build-skill-reference.mjs",
     "demo": "tsc && node tools/demo.mjs",
-    "demo:record": "npm run build && vhs demo.tape && node tools/gif-play-once.mjs assets/demo.gif"
+    "demo:record": "npm run build && vhs demo.tape && node tools/gif-play-once.mjs assets/demo.gif",
+    "mcpb": "npm run build && node tools/build-mcpb.mjs --pack"
   },
   "keywords": [
     "yandex",
