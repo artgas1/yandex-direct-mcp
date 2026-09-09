@@ -1,0 +1,266 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="tools/list: 113 методов API Яндекс Директа, 104 вычеркнуты, по умолчанию объявляются 9 плюс 4 служебных инструмента. Манифест по умолчанию 27 028 байт против 143 706 у полного каталога.">
+<style>
+  .mono { font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace; }
+  .sans { font-family: "Golos Text", -apple-system, "Segoe UI", system-ui, sans-serif; }
+  .name { font-size: 9px; fill: #5c646f; }
+  .name.keep { fill: #16191d; font-weight: 600; }
+  .eyebrow { font-size: 11.5px; letter-spacing: 1.6px; fill: #5c646f; font-weight: 600; }
+  .brand { font-size: 14px; fill: #16191d; font-weight: 600; }
+  .disc { font-size: 12px; fill: #5c646f; }
+  .h1 { font-size: 41px; font-weight: 800; fill: #16191d; letter-spacing: -.8px; }
+  .lede { font-size: 15px; fill: #4c545e; }
+  .fignum { font-size: 27px; font-weight: 800; fill: #16191d; letter-spacing: -.4px; }
+  .figkey { font-size: 11.5px; fill: #4c545e; }
+  .arrow { font-size: 20px; fill: #c23327; font-weight: 700; }
+  .strike { stroke: #c23327; stroke-width: 1.05; }
+  .s { transform-origin: left center; animation: cut .28s ease-out both; }
+  @keyframes cut { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  .fadein { animation: fadein .5s ease-out both; animation-delay: 3.44s; }
+  @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+  .keepbox { animation: fadein .4s ease-out both; animation-delay: .2s; }
+  @media (prefers-reduced-motion: reduce) {
+    .s, .fadein, .keepbox { animation: none; }
+  }
+</style>
+<rect width="1200" height="630" fill="#eceef0"/>
+<rect x="28" y="118" width="1144" height="420" fill="#e3e6ea" stroke="#d2d7dd"/>
+<rect x="48" y="32" width="11" height="11" rx="1.5" fill="#fc3f1d"/>
+<text class="sans brand" x="67" y="42">Яндекс Директ</text>
+<text class="sans eyebrow" x="177" y="42">· TOOLS/LIST</text>
+<text class="sans h1" x="48" y="86">Вычеркнуть 104 метода</text>
+<text class="sans lede" x="48" y="108">Покрыты все 113 методов API v5. По умолчанию объявляются девять — те, которыми читают, — плюс 4 служебных инструмента.</text>
+<g class="keepbox"><rect x="45.0" y="141.4" width="70.8" height="11.6" fill="#cfdcea"/>
+<rect x="45.0" y="154.8" width="43.8" height="11.6" fill="#cfdcea"/>
+<rect x="45.0" y="168.2" width="92.4" height="11.6" fill="#cfdcea"/>
+<rect x="45.0" y="181.6" width="76.2" height="11.6" fill="#cfdcea"/>
+<rect x="45.0" y="195.0" width="65.4" height="11.6" fill="#cfdcea"/>
+<rect x="45.0" y="208.4" width="92.4" height="11.6" fill="#cfdcea"/>
+<rect x="45.0" y="221.8" width="87.0" height="11.6" fill="#cfdcea"/>
+<rect x="45.0" y="235.2" width="70.8" height="11.6" fill="#cfdcea"/>
+<rect x="45.0" y="248.6" width="65.4" height="11.6" fill="#cfdcea"/></g>
+<text class="mono name keep" x="48" y="150.0">adgroups_get</text>
+<text class="mono name keep" x="48" y="163.4">ads_get</text>
+<text class="mono name keep" x="48" y="176.8">bidmodifiers_get</text>
+<text class="mono name keep" x="48" y="190.2">campaigns_get</text>
+<text class="mono name keep" x="48" y="203.6">clients_get</text>
+<text class="mono name keep" x="48" y="217.0">dictionaries_get</text>
+<text class="mono name keep" x="48" y="230.4">keywordbids_get</text>
+<text class="mono name keep" x="48" y="243.8">keywords_get</text>
+<text class="mono name keep" x="48" y="257.2">reports_get</text>
+<text class="mono name" x="48" y="270.6">adextensions_add</text>
+<text class="mono name" x="48" y="284.0">adextensions_delete</text>
+<text class="mono name" x="48" y="297.4">adextensions_get</text>
+<text class="mono name" x="48" y="310.8">adgroups_add</text>
+<text class="mono name" x="48" y="324.2">adgroups_delete</text>
+<text class="mono name" x="48" y="337.6">adgroups_update</text>
+<text class="mono name" x="48" y="351.0">adimages_add</text>
+<text class="mono name" x="48" y="364.4">adimages_delete</text>
+<text class="mono name" x="48" y="377.8">adimages_get</text>
+<text class="mono name" x="48" y="391.2">ads_add</text>
+<text class="mono name" x="48" y="404.6">ads_archive</text>
+<text class="mono name" x="48" y="418.0">ads_delete</text>
+<text class="mono name" x="48" y="431.4">ads_moderate</text>
+<text class="mono name" x="48" y="444.8">ads_resume</text>
+<text class="mono name" x="48" y="458.2">ads_suspend</text>
+<text class="mono name" x="48" y="471.6">ads_unarchive</text>
+<text class="mono name" x="48" y="485.0">ads_update</text>
+<text class="mono name" x="48" y="498.4">advideos_add</text>
+<text class="mono name" x="48" y="511.8">advideos_get</text>
+<text class="mono name" x="48" y="525.2">agencyclients_add</text>
+<text class="mono name" x="319.5" y="150.0">agencyclients_add_passport_organization</text>
+<text class="mono name" x="319.5" y="163.4">agencyclients_add_passport_organization_member</text>
+<text class="mono name" x="319.5" y="176.8">agencyclients_get</text>
+<text class="mono name" x="319.5" y="190.2">agencyclients_update</text>
+<text class="mono name" x="319.5" y="203.6">audiencetargets_add</text>
+<text class="mono name" x="319.5" y="217.0">audiencetargets_delete</text>
+<text class="mono name" x="319.5" y="230.4">audiencetargets_get</text>
+<text class="mono name" x="319.5" y="243.8">audiencetargets_resume</text>
+<text class="mono name" x="319.5" y="257.2">audiencetargets_set_bids</text>
+<text class="mono name" x="319.5" y="270.6">audiencetargets_suspend</text>
+<text class="mono name" x="319.5" y="284.0">bidmodifiers_add</text>
+<text class="mono name" x="319.5" y="297.4">bidmodifiers_delete</text>
+<text class="mono name" x="319.5" y="310.8">bidmodifiers_set</text>
+<text class="mono name" x="319.5" y="324.2">bids_get</text>
+<text class="mono name" x="319.5" y="337.6">bids_set</text>
+<text class="mono name" x="319.5" y="351.0">bids_set_auto</text>
+<text class="mono name" x="319.5" y="364.4">businesses_get</text>
+<text class="mono name" x="319.5" y="377.8">campaigns_add</text>
+<text class="mono name" x="319.5" y="391.2">campaigns_archive</text>
+<text class="mono name" x="319.5" y="404.6">campaigns_delete</text>
+<text class="mono name" x="319.5" y="418.0">campaigns_resume</text>
+<text class="mono name" x="319.5" y="431.4">campaigns_suspend</text>
+<text class="mono name" x="319.5" y="444.8">campaigns_unarchive</text>
+<text class="mono name" x="319.5" y="458.2">campaigns_update</text>
+<text class="mono name" x="319.5" y="471.6">changes_check</text>
+<text class="mono name" x="319.5" y="485.0">changes_check_campaigns</text>
+<text class="mono name" x="319.5" y="498.4">changes_check_dictionaries</text>
+<text class="mono name" x="319.5" y="511.8">clients_update</text>
+<text class="mono name" x="319.5" y="525.2">creatives_add</text>
+<text class="mono name" x="591" y="150.0">creatives_get</text>
+<text class="mono name" x="591" y="163.4">dictionaries_get_geo_regions</text>
+<text class="mono name" x="591" y="176.8">dynamicfeedadtargets_add</text>
+<text class="mono name" x="591" y="190.2">dynamicfeedadtargets_delete</text>
+<text class="mono name" x="591" y="203.6">dynamicfeedadtargets_get</text>
+<text class="mono name" x="591" y="217.0">dynamicfeedadtargets_resume</text>
+<text class="mono name" x="591" y="230.4">dynamicfeedadtargets_set_bids</text>
+<text class="mono name" x="591" y="243.8">dynamicfeedadtargets_suspend</text>
+<text class="mono name" x="591" y="257.2">dynamictextadtargets_add</text>
+<text class="mono name" x="591" y="270.6">dynamictextadtargets_delete</text>
+<text class="mono name" x="591" y="284.0">dynamictextadtargets_get</text>
+<text class="mono name" x="591" y="297.4">dynamictextadtargets_resume</text>
+<text class="mono name" x="591" y="310.8">dynamictextadtargets_set_bids</text>
+<text class="mono name" x="591" y="324.2">dynamictextadtargets_suspend</text>
+<text class="mono name" x="591" y="337.6">feeds_add</text>
+<text class="mono name" x="591" y="351.0">feeds_delete</text>
+<text class="mono name" x="591" y="364.4">feeds_get</text>
+<text class="mono name" x="591" y="377.8">feeds_update</text>
+<text class="mono name" x="591" y="391.2">keywordbids_set</text>
+<text class="mono name" x="591" y="404.6">keywordbids_set_auto</text>
+<text class="mono name" x="591" y="418.0">keywords_add</text>
+<text class="mono name" x="591" y="431.4">keywords_delete</text>
+<text class="mono name" x="591" y="444.8">keywords_resume</text>
+<text class="mono name" x="591" y="458.2">keywords_suspend</text>
+<text class="mono name" x="591" y="471.6">keywords_update</text>
+<text class="mono name" x="591" y="485.0">keywordsresearch_deduplicate</text>
+<text class="mono name" x="591" y="498.4">keywordsresearch_has_search_volume</text>
+<text class="mono name" x="591" y="511.8">leads_get</text>
+<text class="mono name" x="591" y="525.2">negativekeywordsharedsets_add</text>
+<text class="mono name" x="862.5" y="150.0">negativekeywordsharedsets_delete</text>
+<text class="mono name" x="862.5" y="163.4">negativekeywordsharedsets_get</text>
+<text class="mono name" x="862.5" y="176.8">negativekeywordsharedsets_update</text>
+<text class="mono name" x="862.5" y="190.2">retargetinglists_add</text>
+<text class="mono name" x="862.5" y="203.6">retargetinglists_delete</text>
+<text class="mono name" x="862.5" y="217.0">retargetinglists_get</text>
+<text class="mono name" x="862.5" y="230.4">retargetinglists_update</text>
+<text class="mono name" x="862.5" y="243.8">sitelinks_add</text>
+<text class="mono name" x="862.5" y="257.2">sitelinks_delete</text>
+<text class="mono name" x="862.5" y="270.6">sitelinks_get</text>
+<text class="mono name" x="862.5" y="284.0">smartadtargets_add</text>
+<text class="mono name" x="862.5" y="297.4">smartadtargets_delete</text>
+<text class="mono name" x="862.5" y="310.8">smartadtargets_get</text>
+<text class="mono name" x="862.5" y="324.2">smartadtargets_resume</text>
+<text class="mono name" x="862.5" y="337.6">smartadtargets_set_bids</text>
+<text class="mono name" x="862.5" y="351.0">smartadtargets_suspend</text>
+<text class="mono name" x="862.5" y="364.4">smartadtargets_update</text>
+<text class="mono name" x="862.5" y="377.8">strategies_add</text>
+<text class="mono name" x="862.5" y="391.2">strategies_archive</text>
+<text class="mono name" x="862.5" y="404.6">strategies_get</text>
+<text class="mono name" x="862.5" y="418.0">strategies_unarchive</text>
+<text class="mono name" x="862.5" y="431.4">strategies_update</text>
+<text class="mono name" x="862.5" y="444.8">turbopages_get</text>
+<text class="mono name" x="862.5" y="458.2">vcards_add</text>
+<text class="mono name" x="862.5" y="471.6">vcards_delete</text>
+<text class="mono name" x="862.5" y="485.0">vcards_get</text>
+<g><line class="strike s" x1="48" y1="267.6" x2="134.4" y2="267.6" style="animation-delay:0.12s"/>
+<line class="strike s" x1="48" y1="281.0" x2="150.6" y2="281.0" style="animation-delay:0.15s"/>
+<line class="strike s" x1="48" y1="294.4" x2="134.4" y2="294.4" style="animation-delay:0.18s"/>
+<line class="strike s" x1="48" y1="307.8" x2="112.8" y2="307.8" style="animation-delay:0.21s"/>
+<line class="strike s" x1="48" y1="321.2" x2="129.0" y2="321.2" style="animation-delay:0.24s"/>
+<line class="strike s" x1="48" y1="334.6" x2="129.0" y2="334.6" style="animation-delay:0.27s"/>
+<line class="strike s" x1="48" y1="348.0" x2="112.8" y2="348.0" style="animation-delay:0.30s"/>
+<line class="strike s" x1="48" y1="361.4" x2="129.0" y2="361.4" style="animation-delay:0.33s"/>
+<line class="strike s" x1="48" y1="374.8" x2="112.8" y2="374.8" style="animation-delay:0.36s"/>
+<line class="strike s" x1="48" y1="388.2" x2="85.8" y2="388.2" style="animation-delay:0.39s"/>
+<line class="strike s" x1="48" y1="401.6" x2="107.4" y2="401.6" style="animation-delay:0.42s"/>
+<line class="strike s" x1="48" y1="415.0" x2="102.0" y2="415.0" style="animation-delay:0.45s"/>
+<line class="strike s" x1="48" y1="428.4" x2="112.8" y2="428.4" style="animation-delay:0.48s"/>
+<line class="strike s" x1="48" y1="441.8" x2="102.0" y2="441.8" style="animation-delay:0.51s"/>
+<line class="strike s" x1="48" y1="455.2" x2="107.4" y2="455.2" style="animation-delay:0.54s"/>
+<line class="strike s" x1="48" y1="468.6" x2="118.2" y2="468.6" style="animation-delay:0.57s"/>
+<line class="strike s" x1="48" y1="482.0" x2="102.0" y2="482.0" style="animation-delay:0.60s"/>
+<line class="strike s" x1="48" y1="495.4" x2="112.8" y2="495.4" style="animation-delay:0.63s"/>
+<line class="strike s" x1="48" y1="508.8" x2="112.8" y2="508.8" style="animation-delay:0.66s"/>
+<line class="strike s" x1="48" y1="522.2" x2="139.8" y2="522.2" style="animation-delay:0.69s"/>
+<line class="strike s" x1="319.5" y1="147.0" x2="530.1" y2="147.0" style="animation-delay:0.72s"/>
+<line class="strike s" x1="319.5" y1="160.4" x2="567.9" y2="160.4" style="animation-delay:0.75s"/>
+<line class="strike s" x1="319.5" y1="173.8" x2="411.3" y2="173.8" style="animation-delay:0.78s"/>
+<line class="strike s" x1="319.5" y1="187.2" x2="427.5" y2="187.2" style="animation-delay:0.81s"/>
+<line class="strike s" x1="319.5" y1="200.6" x2="422.1" y2="200.6" style="animation-delay:0.84s"/>
+<line class="strike s" x1="319.5" y1="214.0" x2="438.3" y2="214.0" style="animation-delay:0.87s"/>
+<line class="strike s" x1="319.5" y1="227.4" x2="422.1" y2="227.4" style="animation-delay:0.90s"/>
+<line class="strike s" x1="319.5" y1="240.8" x2="438.3" y2="240.8" style="animation-delay:0.93s"/>
+<line class="strike s" x1="319.5" y1="254.2" x2="449.1" y2="254.2" style="animation-delay:0.96s"/>
+<line class="strike s" x1="319.5" y1="267.6" x2="443.7" y2="267.6" style="animation-delay:0.99s"/>
+<line class="strike s" x1="319.5" y1="281.0" x2="405.9" y2="281.0" style="animation-delay:1.02s"/>
+<line class="strike s" x1="319.5" y1="294.4" x2="422.1" y2="294.4" style="animation-delay:1.05s"/>
+<line class="strike s" x1="319.5" y1="307.8" x2="405.9" y2="307.8" style="animation-delay:1.08s"/>
+<line class="strike s" x1="319.5" y1="321.2" x2="362.7" y2="321.2" style="animation-delay:1.11s"/>
+<line class="strike s" x1="319.5" y1="334.6" x2="362.7" y2="334.6" style="animation-delay:1.14s"/>
+<line class="strike s" x1="319.5" y1="348.0" x2="389.7" y2="348.0" style="animation-delay:1.17s"/>
+<line class="strike s" x1="319.5" y1="361.4" x2="395.1" y2="361.4" style="animation-delay:1.20s"/>
+<line class="strike s" x1="319.5" y1="374.8" x2="389.7" y2="374.8" style="animation-delay:1.23s"/>
+<line class="strike s" x1="319.5" y1="388.2" x2="411.3" y2="388.2" style="animation-delay:1.26s"/>
+<line class="strike s" x1="319.5" y1="401.6" x2="405.9" y2="401.6" style="animation-delay:1.29s"/>
+<line class="strike s" x1="319.5" y1="415.0" x2="405.9" y2="415.0" style="animation-delay:1.32s"/>
+<line class="strike s" x1="319.5" y1="428.4" x2="411.3" y2="428.4" style="animation-delay:1.35s"/>
+<line class="strike s" x1="319.5" y1="441.8" x2="422.1" y2="441.8" style="animation-delay:1.38s"/>
+<line class="strike s" x1="319.5" y1="455.2" x2="405.9" y2="455.2" style="animation-delay:1.41s"/>
+<line class="strike s" x1="319.5" y1="468.6" x2="389.7" y2="468.6" style="animation-delay:1.44s"/>
+<line class="strike s" x1="319.5" y1="482.0" x2="443.7" y2="482.0" style="animation-delay:1.47s"/>
+<line class="strike s" x1="319.5" y1="495.4" x2="459.9" y2="495.4" style="animation-delay:1.50s"/>
+<line class="strike s" x1="319.5" y1="508.8" x2="395.1" y2="508.8" style="animation-delay:1.53s"/>
+<line class="strike s" x1="319.5" y1="522.2" x2="389.7" y2="522.2" style="animation-delay:1.56s"/>
+<line class="strike s" x1="591" y1="147.0" x2="661.2" y2="147.0" style="animation-delay:1.59s"/>
+<line class="strike s" x1="591" y1="160.4" x2="742.2" y2="160.4" style="animation-delay:1.62s"/>
+<line class="strike s" x1="591" y1="173.8" x2="720.6" y2="173.8" style="animation-delay:1.65s"/>
+<line class="strike s" x1="591" y1="187.2" x2="736.8" y2="187.2" style="animation-delay:1.68s"/>
+<line class="strike s" x1="591" y1="200.6" x2="720.6" y2="200.6" style="animation-delay:1.71s"/>
+<line class="strike s" x1="591" y1="214.0" x2="736.8" y2="214.0" style="animation-delay:1.74s"/>
+<line class="strike s" x1="591" y1="227.4" x2="747.6" y2="227.4" style="animation-delay:1.77s"/>
+<line class="strike s" x1="591" y1="240.8" x2="742.2" y2="240.8" style="animation-delay:1.80s"/>
+<line class="strike s" x1="591" y1="254.2" x2="720.6" y2="254.2" style="animation-delay:1.83s"/>
+<line class="strike s" x1="591" y1="267.6" x2="736.8" y2="267.6" style="animation-delay:1.86s"/>
+<line class="strike s" x1="591" y1="281.0" x2="720.6" y2="281.0" style="animation-delay:1.89s"/>
+<line class="strike s" x1="591" y1="294.4" x2="736.8" y2="294.4" style="animation-delay:1.92s"/>
+<line class="strike s" x1="591" y1="307.8" x2="747.6" y2="307.8" style="animation-delay:1.95s"/>
+<line class="strike s" x1="591" y1="321.2" x2="742.2" y2="321.2" style="animation-delay:1.98s"/>
+<line class="strike s" x1="591" y1="334.6" x2="639.6" y2="334.6" style="animation-delay:2.01s"/>
+<line class="strike s" x1="591" y1="348.0" x2="655.8" y2="348.0" style="animation-delay:2.04s"/>
+<line class="strike s" x1="591" y1="361.4" x2="639.6" y2="361.4" style="animation-delay:2.07s"/>
+<line class="strike s" x1="591" y1="374.8" x2="655.8" y2="374.8" style="animation-delay:2.10s"/>
+<line class="strike s" x1="591" y1="388.2" x2="672.0" y2="388.2" style="animation-delay:2.13s"/>
+<line class="strike s" x1="591" y1="401.6" x2="699.0" y2="401.6" style="animation-delay:2.16s"/>
+<line class="strike s" x1="591" y1="415.0" x2="655.8" y2="415.0" style="animation-delay:2.19s"/>
+<line class="strike s" x1="591" y1="428.4" x2="672.0" y2="428.4" style="animation-delay:2.22s"/>
+<line class="strike s" x1="591" y1="441.8" x2="672.0" y2="441.8" style="animation-delay:2.25s"/>
+<line class="strike s" x1="591" y1="455.2" x2="677.4" y2="455.2" style="animation-delay:2.28s"/>
+<line class="strike s" x1="591" y1="468.6" x2="672.0" y2="468.6" style="animation-delay:2.31s"/>
+<line class="strike s" x1="591" y1="482.0" x2="742.2" y2="482.0" style="animation-delay:2.34s"/>
+<line class="strike s" x1="591" y1="495.4" x2="774.6" y2="495.4" style="animation-delay:2.37s"/>
+<line class="strike s" x1="591" y1="508.8" x2="639.6" y2="508.8" style="animation-delay:2.40s"/>
+<line class="strike s" x1="591" y1="522.2" x2="747.6" y2="522.2" style="animation-delay:2.43s"/>
+<line class="strike s" x1="862.5" y1="147.0" x2="1035.3" y2="147.0" style="animation-delay:2.46s"/>
+<line class="strike s" x1="862.5" y1="160.4" x2="1019.1" y2="160.4" style="animation-delay:2.49s"/>
+<line class="strike s" x1="862.5" y1="173.8" x2="1035.3" y2="173.8" style="animation-delay:2.52s"/>
+<line class="strike s" x1="862.5" y1="187.2" x2="970.5" y2="187.2" style="animation-delay:2.55s"/>
+<line class="strike s" x1="862.5" y1="200.6" x2="986.7" y2="200.6" style="animation-delay:2.58s"/>
+<line class="strike s" x1="862.5" y1="214.0" x2="970.5" y2="214.0" style="animation-delay:2.61s"/>
+<line class="strike s" x1="862.5" y1="227.4" x2="986.7" y2="227.4" style="animation-delay:2.64s"/>
+<line class="strike s" x1="862.5" y1="240.8" x2="932.7" y2="240.8" style="animation-delay:2.67s"/>
+<line class="strike s" x1="862.5" y1="254.2" x2="948.9" y2="254.2" style="animation-delay:2.70s"/>
+<line class="strike s" x1="862.5" y1="267.6" x2="932.7" y2="267.6" style="animation-delay:2.73s"/>
+<line class="strike s" x1="862.5" y1="281.0" x2="959.7" y2="281.0" style="animation-delay:2.76s"/>
+<line class="strike s" x1="862.5" y1="294.4" x2="975.9" y2="294.4" style="animation-delay:2.79s"/>
+<line class="strike s" x1="862.5" y1="307.8" x2="959.7" y2="307.8" style="animation-delay:2.82s"/>
+<line class="strike s" x1="862.5" y1="321.2" x2="975.9" y2="321.2" style="animation-delay:2.85s"/>
+<line class="strike s" x1="862.5" y1="334.6" x2="986.7" y2="334.6" style="animation-delay:2.88s"/>
+<line class="strike s" x1="862.5" y1="348.0" x2="981.3" y2="348.0" style="animation-delay:2.91s"/>
+<line class="strike s" x1="862.5" y1="361.4" x2="975.9" y2="361.4" style="animation-delay:2.94s"/>
+<line class="strike s" x1="862.5" y1="374.8" x2="938.1" y2="374.8" style="animation-delay:2.97s"/>
+<line class="strike s" x1="862.5" y1="388.2" x2="959.7" y2="388.2" style="animation-delay:3.00s"/>
+<line class="strike s" x1="862.5" y1="401.6" x2="938.1" y2="401.6" style="animation-delay:3.03s"/>
+<line class="strike s" x1="862.5" y1="415.0" x2="970.5" y2="415.0" style="animation-delay:3.06s"/>
+<line class="strike s" x1="862.5" y1="428.4" x2="954.3" y2="428.4" style="animation-delay:3.09s"/>
+<line class="strike s" x1="862.5" y1="441.8" x2="938.1" y2="441.8" style="animation-delay:3.12s"/>
+<line class="strike s" x1="862.5" y1="455.2" x2="916.5" y2="455.2" style="animation-delay:3.15s"/>
+<line class="strike s" x1="862.5" y1="468.6" x2="932.7" y2="468.6" style="animation-delay:3.18s"/>
+<line class="strike s" x1="862.5" y1="482.0" x2="916.5" y2="482.0" style="animation-delay:3.21s"/></g>
+<g class="fadein">
+<text class="sans fignum" x="48" y="588" text-decoration="line-through" fill="#5c646f">143 706 Б</text>
+<text class="sans arrow" x="214" y="587">→</text>
+<text class="sans fignum" x="247" y="588">27 028 Б</text>
+<text class="sans figkey" x="48" y="608">манифест по умолчанию · замер сериализацией ответа tools/list · в списке опущен общий префикс direct_</text>
+<text class="sans figkey" x="1152" y="608" text-anchor="end">npx -y yandex-direct-api-mcp</text>
+<text class="sans disc" x="48" y="628">Неофициальный клиент API. Яндекс Директ — сервис Яндекса.</text>
+</g>
+</svg>

@@ -1,7 +1,7 @@
 {
   "name": "yandex-direct-api-mcp",
   "mcpName": "io.github.artgas1/yandex-direct-api-mcp",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "MCP-сервер к API Яндекс Директа v5: инструменты порождены из машиночитаемой спеки, деньги в рублях, 64-битные идентификаторы без потери точности",
   "main": "./build/index.js",
   "type": "module",
@@ -18,7 +18,9 @@
     "skill:build": "node tools/build-skill-reference.mjs",
     "demo": "tsc && node tools/demo.mjs",
     "demo:record": "npm run build && vhs demo.tape && node tools/gif-play-once.mjs assets/demo.gif",
-    "mcpb": "npm run build && node tools/build-mcpb.mjs --pack"
+    "mcpb": "npm run build && node tools/build-mcpb.mjs --pack",
+    "coverage": "node tools/coverage.mjs",
+    "graphic": "tsc && node tools/build-graphic.mjs --gif"
   },
   "keywords": [
     "yandex",
