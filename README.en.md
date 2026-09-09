@@ -307,7 +307,7 @@ CI included. Re-record with <code>npm run demo:record</code>
 (needs <a href="https://github.com/charmbracelet/vhs">vhs</a>).</sup>
 
 ```bash
-npm test        # 48 tests, negative controls included
+npm test        # 58 tests, negative controls included
 npm run surface # measure the surface per profile
 npm run smoke   # run the built server against the live API (token required)
 ```
