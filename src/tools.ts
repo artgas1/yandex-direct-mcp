@@ -296,9 +296,11 @@ export function registerAll(server: Registrar, spec: Spec, token: string, option
       clientLogin: options.clientLogin,
       maxOutputChars: options.maxOutputChars,
     });
-    count++;
   }
 
+  // Возвращается число инструментов API — служебные сюда не входят. Раньше
+  // сводка попадала в этот счёт, а остальные служебные нет, и величина не
+  // означала ничего: ни «объявлено», ни «методов».
   return count;
 }
 

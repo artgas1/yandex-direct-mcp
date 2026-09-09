@@ -8,13 +8,13 @@
     "source": "github"
   },
   "websiteUrl": "https://github.com/artgas1/yandex-direct-mcp#readme",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "packages": [
     {
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "yandex-direct-api-mcp",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "runtimeHint": "npx",
       "transport": {
         "type": "stdio"

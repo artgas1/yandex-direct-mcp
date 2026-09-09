@@ -327,7 +327,7 @@ missing capability. The right to decide stays with the API.
 
 
 ```bash
-npm test         # 67 tests, negative controls included
+npm test         # 70 tests, negative controls included
 npm run surface  # measure the surface per profile
 npm run coverage # the coverage table for the README
 npm run graphic  # rebuild the surface graphic (SVG and GIF)
