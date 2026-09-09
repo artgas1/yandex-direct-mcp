@@ -1,0 +1,31 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ['20', '22']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm ci
+      - run: npm test
+
+      # Поверхность — то, за что клиент платит на каждом ходу. Замер держим в CI,
+      # чтобы её рост не проходил незамеченным: разворачивание вложенных типов
+      # или инлайн перечислений раздувают её в разы, и в диффе это не видно.
+      - run: npm run surface
+
+      # Спека собирается из живых источников Яндекса. Прогон в CI не сверяет её
+      # с репозиторием (сеть в CI может отличаться), но ловит поломку самого
+      # генератора — он молчалив по построению.
+      - name: генератор справочников работоспособен
+        run: node tools/build-skill-reference.mjs

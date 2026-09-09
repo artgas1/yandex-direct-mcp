@@ -1,0 +1,63 @@
+{
+  "name": "yandex-direct-api-mcp",
+  "mcpName": "io.github.artgas1/yandex-direct-api-mcp",
+  "version": "1.0.0",
+  "description": "MCP-сервер к API Яндекс Директа v5: инструменты порождены из машиночитаемой спеки, деньги в рублях, 64-битные идентификаторы без потери точности",
+  "main": "./build/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./build/index.js",
+    "test": "tsc && node --test test/*.test.mjs",
+    "spec:fetch": "node tools/fetch-spec.mjs",
+    "spec:build": "node tools/parse-spec.mjs && node tools/build-skill-reference.mjs",
+    "inspector": "npx @modelcontextprotocol/inspector node ./build/index.js",
+    "prepublishOnly": "npm test",
+    "surface": "tsc && node tools/measure-surface.mjs",
+    "smoke": "tsc && node tools/smoke.mjs",
+    "skill:build": "node tools/build-skill-reference.mjs"
+  },
+  "keywords": [
+    "yandex",
+    "yandex-direct",
+    "direct",
+    "mcp",
+    "model-context-protocol",
+    "mcp-server",
+    "ppc",
+    "advertising",
+    "context-advertising"
+  ],
+  "author": "Artem Gasparyan",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.14",
+    "fast-xml-parser": "^5.11.1",
+    "typescript": "^5.8.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artgas1/yandex-direct-mcp.git"
+  },
+  "bin": {
+    "yandex-direct-mcp": "build/index.js"
+  },
+  "files": [
+    "build",
+    "spec",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "homepage": "https://github.com/artgas1/yandex-direct-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/artgas1/yandex-direct-mcp/issues"
+  }
+}

@@ -1,0 +1,11 @@
+node_modules
+.DS_Store
+.env
+.cursor
+build
+.cache
+.mcpb-build
+*.mcpb
+
+# разовые черновые замеры
+est*.py
