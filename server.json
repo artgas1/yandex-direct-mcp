@@ -1,0 +1,90 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.artgas1/yandex-direct-api-mcp",
+  "title": "Яндекс Директ API v5",
+  "description": "MCP server for Yandex Direct API v5: 113 methods from the machine-readable schema",
+  "repository": {
+    "url": "https://github.com/artgas1/yandex-direct-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://github.com/artgas1/yandex-direct-mcp#readme",
+  "version": "1.0.1",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "yandex-direct-api-mcp",
+      "version": "1.0.1",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "YANDEX_DIRECT_TOKEN",
+          "description": "OAuth-токен Яндекса со scope direct:api (https://oauth.yandex.ru/)",
+          "isRequired": true,
+          "isSecret": true,
+          "format": "string"
+        },
+        {
+          "name": "YANDEX_DIRECT_LOGIN",
+          "description": "Логин кабинета для заголовка Client-Login. Нужен агентствам и представителям; для собственного кабинета не задаётся",
+          "isRequired": false,
+          "isSecret": false,
+          "format": "string"
+        },
+        {
+          "name": "DIRECT_PROFILE",
+          "description": "Набор объявляемых инструментов: core — узкий набор по умолчанию, read — все читающие, all — вся поверхность",
+          "isRequired": false,
+          "format": "string",
+          "default": "core",
+          "choices": [
+            "core",
+            "read",
+            "all"
+          ]
+        },
+        {
+          "name": "DIRECT_TOOLS",
+          "description": "Явный список инструментов или служб через запятую. Побеждает DIRECT_PROFILE",
+          "isRequired": false,
+          "format": "string"
+        },
+        {
+          "name": "DIRECT_ALLOW_WRITES",
+          "description": "Разрешить изменяющие методы (add/update/delete). Пока выключено, они не объявляются вовсе. Значения: 1, true, yes",
+          "isRequired": false,
+          "format": "string",
+          "default": "0"
+        },
+        {
+          "name": "DIRECT_API_VERSION",
+          "description": "Версия пути API. Разные версии отдают разные наборы полей одной и той же кампании",
+          "isRequired": false,
+          "format": "string",
+          "default": "v501",
+          "choices": [
+            "v501",
+            "v5"
+          ]
+        },
+        {
+          "name": "DIRECT_SANDBOX",
+          "description": "Отправлять запросы в песочницу Директа вместо боевого кабинета. Значения: 1, true, yes",
+          "isRequired": false,
+          "format": "string",
+          "default": "0"
+        },
+        {
+          "name": "DIRECT_MAX_OUTPUT_CHARS",
+          "description": "Потолок размера ответа инструмента в символах; сверх него ответ усекается с пометкой",
+          "isRequired": false,
+          "format": "number",
+          "default": "60000"
+        }
+      ]
+    }
+  ]
+}

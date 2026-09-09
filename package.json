@@ -15,7 +15,9 @@
     "prepublishOnly": "npm test",
     "surface": "tsc && node tools/measure-surface.mjs",
     "smoke": "tsc && node tools/smoke.mjs",
-    "skill:build": "node tools/build-skill-reference.mjs"
+    "skill:build": "node tools/build-skill-reference.mjs",
+    "demo": "tsc && node tools/demo.mjs",
+    "demo:record": "npm run build && vhs demo.tape && node tools/gif-play-once.mjs assets/demo.gif"
   },
   "keywords": [
     "yandex",
@@ -50,6 +52,7 @@
     "build",
     "spec",
     "README.md",
+    "README.en.md",
     "CHANGELOG.md",
     "LICENSE"
   ],
