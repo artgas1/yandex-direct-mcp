@@ -10,10 +10,6 @@ MCP-сервер и командная строка к API Яндекс Дире
 npx yandex-direct-api-mcp help
 ```
 
-> Пакет ещё не опубликован в npm. Пока — прямо из репозитория:
-> `git clone https://github.com/artgas1/yandex-direct-mcp && cd yandex-direct-mcp && npm ci && npm run build`,
-> дальше `node build/index.js help`. Эту врезку убрать после публикации.
-
 ## Быстрый старт
 
 Нужен OAuth-токен Яндекса со scope `direct:api` — https://oauth.yandex.ru/
