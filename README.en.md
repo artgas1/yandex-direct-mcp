@@ -1,17 +1,51 @@
-[Русский](README.md)
-
 # yandex-direct-mcp
 
-An MCP server and command-line tool for the Yandex Direct API v5. **113 methods
-generated from the machine-readable schema**, a narrow surface by default, writes
-turned off.
+An MCP server and command-line tool for the Yandex Direct API v5. All **113 methods**
+are covered, generated from the machine-readable schema; nine are declared by
+default — the ones you read with. The rest is one variable away, writes are off.
+
+mcp-name: io.github.artgas1/yandex-direct-api-mcp
+
+[![npm](https://img.shields.io/npm/v/yandex-direct-api-mcp)](https://www.npmjs.com/package/yandex-direct-api-mcp)
+[![CI](https://github.com/artgas1/yandex-direct-mcp/actions/workflows/test.yml/badge.svg)](https://github.com/artgas1/yandex-direct-mcp/actions/workflows/test.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+
+*[Русский](./README.md)*
 
 It runs as an MCP server for Claude Code, Cursor, Codex and other clients, and as
 an ordinary command if you don't need MCP at all.
 
+## What it does — in five seconds
+
+<img src="https://raw.githubusercontent.com/artgas1/yandex-direct-mcp/main/assets/demo.gif" alt="A terminal recording: a direct_campaigns_get call and two columns — on the left the response body parsed with plain JSON.parse, on the right the same data after the server. Budget 1000000000 against 1000, an ad identifier mangled by parsing against the exact one, an Items wrapper against a plain list, and a failure carrying HTTP 202 recognised as a failure." width="100%">
+
+<sup>Both columns are real: the left one is the response body parsed with plain
+<code>JSON.parse</code>, exactly as any client would get it; the right one is what the
+server returned over JSON-RPC. The identifier row proves itself — the left value is
+mangled not because the picture says so, but because parsing genuinely mangles it.
+No token, no network: requests go to a local stub, so the run repeats anywhere,
+CI included. Run it yourself with <code>npm run demo</code>, re-record with <code>npm run demo:record</code>
+(needs <a href="https://github.com/charmbracelet/vhs">vhs</a>).</sup>
+
+
 ```bash
-npx yandex-direct-api-mcp help
+npx -y yandex-direct-api-mcp
 ```
+
+## Coverage
+
+| what is covered | services | methods | of them in `core` | example tools |
+| --- | ---: | ---: | ---: | --- |
+| Campaigns and ads | 9 | 37 | 3 | `direct_adgroups_get`, `direct_ads_get` |
+| Targeting | 9 | 45 | 1 | `direct_keywords_get` |
+| Bids and strategies | 4 | 15 | 2 | `direct_bidmodifiers_get`, `direct_keywordbids_get` |
+| Reports and dictionaries | 6 | 9 | 2 | `direct_dictionaries_get`, `direct_reports_get` |
+| Clients and agencies | 2 | 7 | 1 | `direct_clients_get` |
+| **total** | **30** | **113** | **9** | plus four service tools: `direct_catalog`, `direct_fields`, `direct_schema`, `direct_inventory` |
+
+The table is computed from the spec (`npm run coverage`) rather than typed by
+hand: numbers in prose drift away from the schema silently, and a stale number
+looks exactly like a true one.
 
 ## Quick start
 
@@ -214,6 +248,8 @@ The descriptions of every declared tool sit in the model's context **on every
 turn**, whether you call them or not. So by default the server declares not
 everything the API can do, but the part that gets used.
 
+<img src="https://raw.githubusercontent.com/artgas1/yandex-direct-mcp/main/assets/surface.gif" alt="All 113 Direct API methods listed: nine kept and highlighted, 104 struck out. The default manifest is 27,028 bytes against 143,706 for the full catalogue." width="100%">
+
 `tools/list` measured against the built server (`npm run surface`):
 
 | profile | tools | bytes | ≈ tokens |
@@ -289,22 +325,6 @@ missing capability. The right to decide stays with the API.
 
 ## Checks
 
-
-### Not a mockup — run it yourself
-
-```bash
-npm run demo
-```
-
-<img src="https://raw.githubusercontent.com/artgas1/yandex-direct-mcp/main/assets/demo.gif" alt="A terminal recording: a direct_campaigns_get call and two columns — on the left the response body parsed with plain JSON.parse, on the right the same data after the server. Budget 1000000000 against 1000, an ad identifier mangled by parsing against the exact one, an Items wrapper against a plain list, and a failure carrying HTTP 202 recognised as a failure." width="100%">
-
-<sup>Both columns are real: the left one is the response body parsed with plain
-<code>JSON.parse</code>, exactly as any client would get it; the right one is what the
-server returned over JSON-RPC. The identifier row proves itself — the left value is
-mangled not because the picture says so, but because parsing genuinely mangles it.
-No token, no network: requests go to a local stub, so the run repeats anywhere,
-CI included. Re-record with <code>npm run demo:record</code>
-(needs <a href="https://github.com/charmbracelet/vhs">vhs</a>).</sup>
 
 ```bash
 npm test        # 58 tests, negative controls included

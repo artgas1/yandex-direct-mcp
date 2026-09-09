@@ -1,16 +1,49 @@
-[English](README.en.md)
-
 # yandex-direct-mcp
 
-MCP-сервер и командная строка к API Яндекс Директа v5. **113 методов, порождённых
-из машиночитаемой схемы**, узкая поверхность по умолчанию, изменение выключено.
+MCP-сервер и командная строка к API Яндекс Директа v5. Покрыты все **113 методов**,
+порождённые из машиночитаемой схемы; по умолчанию объявляются девять — те, которыми
+читают. Остальное включается одной переменной, изменение выключено.
+
+mcp-name: io.github.artgas1/yandex-direct-api-mcp
+
+[![npm](https://img.shields.io/npm/v/yandex-direct-api-mcp)](https://www.npmjs.com/package/yandex-direct-api-mcp)
+[![CI](https://github.com/artgas1/yandex-direct-mcp/actions/workflows/test.yml/badge.svg)](https://github.com/artgas1/yandex-direct-mcp/actions/workflows/test.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+
+*[English](./README.en.md)*
 
 Работает и как MCP-сервер для Claude Code, Cursor, Codex и других клиентов, и как
 обычная команда — если MCP не нужен.
 
+## Что это даёт — за пять секунд
+
+<img src="https://raw.githubusercontent.com/artgas1/yandex-direct-mcp/main/assets/demo.gif" alt="Запись прогона в терминале: вызов direct_campaigns_get и две колонки — слева тело ответа, разобранное обычным JSON.parse, справа то же самое после сервера. Бюджет 1000000000 против 1000, идентификатор объявления, испорченный разбором, против точного, обёртка Items против обычного списка и отказ с кодом HTTP 202, распознанный как отказ." width="100%">
+
+<sup>Обе колонки настоящие: левая — тело ответа, разобранное обычным <code>JSON.parse</code>,
+то есть так, как его получил бы любой клиент; правая — то, что вернул сервер по JSON-RPC.
+Строка с идентификатором самодоказательна: слева он испорчен не потому, что так нарисовано,
+а потому что его действительно портит разбор. Ни токена, ни сети: запросы уводятся на локальную
+заглушку, поэтому прогон повторяется где угодно, включая CI. Повторить у себя — <code>npm run demo</code>, переснять — <code>npm run demo:record</code>
+(нужен <a href="https://github.com/charmbracelet/vhs">vhs</a>).</sup>
+
+
 ```bash
-npx yandex-direct-api-mcp help
+npx -y yandex-direct-api-mcp
 ```
+
+## Покрытие
+
+| что покрыто | служб | методов | из них в `core` | примеры инструментов |
+| --- | ---: | ---: | ---: | --- |
+| Кампании и объявления | 9 | 37 | 3 | `direct_adgroups_get`, `direct_ads_get` |
+| Таргетинг | 9 | 45 | 1 | `direct_keywords_get` |
+| Ставки и стратегии | 4 | 15 | 2 | `direct_bidmodifiers_get`, `direct_keywordbids_get` |
+| Отчёты и справочники | 6 | 9 | 2 | `direct_dictionaries_get`, `direct_reports_get` |
+| Клиенты и агентства | 2 | 7 | 1 | `direct_clients_get` |
+| **всего** | **30** | **113** | **9** | плюс четыре служебных: `direct_catalog`, `direct_fields`, `direct_schema`, `direct_inventory` |
+
+Таблица считается из спеки (`npm run coverage`), а не пишется руками: числа в
+прозе расходятся со схемой молча, и неправда выглядит ровно как правда.
 
 ## Быстрый старт
 
@@ -190,6 +223,8 @@ RestrictedRegionIds  (тип ArrayOfLong)     → {"Items": [225]}
 ходу**, вызываете вы их или нет. Поэтому по умолчанию объявляется не всё, что
 умеет API, а то, чем пользуются.
 
+<img src="https://raw.githubusercontent.com/artgas1/yandex-direct-mcp/main/assets/surface.gif" alt="Список всех 113 методов API Директа: девять оставлены и выделены, 104 вычеркнуты. Манифест по умолчанию — 27 028 байт против 143 706 у полного каталога." width="100%">
+
 Замер `tools/list` на собранном сервере (`npm run surface`):
 
 | профиль | инструментов | байт | ≈ токенов |
@@ -260,21 +295,6 @@ npm run spec:build    # собрать spec/direct-api.json
 отсутствие возможности. Право решать остаётся за API.
 
 ## Проверки
-
-### Не макет — запустите сами
-
-```bash
-npm run demo
-```
-
-<img src="https://raw.githubusercontent.com/artgas1/yandex-direct-mcp/main/assets/demo.gif" alt="Запись прогона в терминале: вызов direct_campaigns_get и две колонки — слева тело ответа, разобранное обычным JSON.parse, справа то же самое после сервера. Бюджет 1000000000 против 1000, идентификатор объявления, испорченный разбором, против точного, обёртка Items против обычного списка и отказ с кодом HTTP 202, распознанный как отказ." width="100%">
-
-<sup>Обе колонки настоящие: левая — тело ответа, разобранное обычным <code>JSON.parse</code>,
-то есть так, как его получил бы любой клиент; правая — то, что вернул сервер по JSON-RPC.
-Строка с идентификатором самодоказательна: слева он испорчен не потому, что так нарисовано,
-а потому что его действительно портит разбор. Ни токена, ни сети: запросы уводятся на локальную
-заглушку, поэтому прогон повторяется где угодно, включая CI. Переснять — <code>npm run demo:record</code>
-(нужен <a href="https://github.com/charmbracelet/vhs">vhs</a>).</sup>
 
 
 ```bash
