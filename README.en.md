@@ -9,6 +9,7 @@ mcp-name: io.github.artgas1/yandex-direct-api-mcp
 [![npm](https://img.shields.io/npm/v/yandex-direct-api-mcp)](https://www.npmjs.com/package/yandex-direct-api-mcp)
 [![CI](https://github.com/artgas1/yandex-direct-mcp/actions/workflows/test.yml/badge.svg)](https://github.com/artgas1/yandex-direct-mcp/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+[![artgas1/yandex-direct-mcp MCP server](https://glama.ai/mcp/servers/artgas1/yandex-direct-mcp/badges/score.svg)](https://glama.ai/mcp/servers/artgas1/yandex-direct-mcp)
 
 *[Русский](./README.md)*
 
